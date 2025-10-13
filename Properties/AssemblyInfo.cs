@@ -1,4 +1,4 @@
-using BetterLocalizedStringPlugin.Extensions;
+﻿using BetterLocalizedStringPlugin.Extensions;
 using Frosty.Core.Attributes;
 using System.Reflection;
 using System.Runtime.InteropServices;
