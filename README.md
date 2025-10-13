@@ -1,0 +1,2 @@
+# FrostyBetterLocalizedStringPlugin
+A better LocalizedStringPlugin
