@@ -1,4 +1,4 @@
-﻿using BetterLocalizedStringPlugin.Extensions;
+using BetterLocalizedStringPlugin.Extensions;
 using Frosty.Core.Attributes;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -23,6 +23,6 @@ using System.Windows;
 
 [assembly: PluginDisplayName("Better Localized String Editor")]
 [assembly: PluginAuthor("shoushou1106")]
-[assembly: PluginVersion("0.1.0")]
+[assembly: PluginVersion("0.1.1")]
 
 [assembly: RegisterMenuExtension(typeof(LocalizedStringViewerMenuExtension))]
