@@ -1,4 +1,4 @@
-﻿using Frosty.Controls;
+using Frosty.Controls;
 using Frosty.Core;
 using Frosty.Core.Controls;
 using Frosty.Core.Windows;
@@ -230,40 +230,51 @@ namespace BetterLocalizedStringPlugin.Windows
         
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            //bool isSuccess = false;
+            bool isSuccess = false;
 
-            //switch ((FileTypeComboBox.SelectedItem as ComboBoxItem).Name)
-            //{
-            //    case "Csv":
-            //        FrostySaveFileDialog sfd = new FrostySaveFileDialog("Save Strings", "CSV file (*.csv)|*.csv|All file (*.*)|*.*", "LocalizedStrings");
-            //        if (sfd.ShowDialog())
-            //            isSuccess = ExportCsv(sfd.FileName);
-            //        break;
-
-            //    case "Json":
-            //        //isSuccess = ImportJson();
-            //        break;
-
-            //    case "Excel":
-            //        //isSuccess = ImportExcel();
-            //        break;
-
-            //    default:
-            //        throw new FileFormatException("The selected File Type cannot be recognized");
-            //}
-
-            //if (isSuccess)
-            //{
-            //    DialogResult = true;
-            //    Close();
-            //}
-            ILocalizedStringDatabase db = LocalizedStringDatabase.Current;
-            Dictionary<string, string> opt = new Dictionary<string, string>();
-            foreach (uint key in db.EnumerateStrings().Distinct())
+            switch ((FileTypeComboBox.SelectedItem as ComboBoxItem).Name)
             {
-                opt.Add(key.ToString("X8"), db.GetString(key));
+                case "Csv":
+                    //FrostySaveFileDialog sfd = new FrostySaveFileDialog("Save Strings", "CSV file (*.csv)|*.csv|All file (*.*)|*.*", "LocalizedStrings");
+                    //if (sfd.ShowDialog())
+                    //    isSuccess = ExportCsv(sfd.FileName);
+                    break;
+
+                case "Json":
+                    FrostySaveFileDialog sfd = new FrostySaveFileDialog("Save Strings", "JSON file (*.json)|*.json|All file (*.*)|*.*", "LocalizedStrings");
+                    if (sfd.ShowDialog())
+                    {
+                        ILocalizedStringDatabase db = LocalizedStringDatabase.Current;
+                        Dictionary<string, string> opt = new Dictionary<string, string>();
+                        foreach (uint key in db.EnumerateStrings().Distinct())
+                        {
+                            opt.Add(key.ToString("X8"), db.GetString(key));
+                        }
+                        File.WriteAllText(sfd.FileName, JsonConvert.SerializeObject(opt));
+                        isSuccess = true;
+                    }
+                    break;
+
+                case "Excel":
+                    //isSuccess = ImportExcel();
+                    break;
+
+                default:
+                    throw new FileFormatException("The selected File Type cannot be recognized");
             }
-            File.WriteAllText("E:\\peilin\\Downloads\\test.json", JsonConvert.SerializeObject(opt));
+
+            if (isSuccess)
+            {
+                DialogResult = true;
+                Close();
+            }
+            //ILocalizedStringDatabase db = LocalizedStringDatabase.Current;
+            //Dictionary<string, string> opt = new Dictionary<string, string>();
+            //foreach (uint key in db.EnumerateStrings().Distinct())
+            //{
+            //    opt.Add(key.ToString("X8"), db.GetString(key));
+            //}
+            //File.WriteAllText("D:\\shous\\Downloads\\test.json", JsonConvert.SerializeObject(opt));
         }
 
         public List<ColumnType> ComboBoxItems { get; set; }
