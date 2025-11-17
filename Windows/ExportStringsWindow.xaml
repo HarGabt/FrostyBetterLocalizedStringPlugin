@@ -215,7 +215,7 @@
                     <Label Width="Auto">
                         <Label.Content>
                             <WrapPanel Orientation="Horizontal">
-                                <TextBlock Margin="0, 1, 5, 0" Text="&#xe8ff;" 
+                                <TextBlock Margin="0, 1, 5, 0" Text="&#xE7B3;" 
                                        FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="14"
                                        RenderOptions.BitmapScalingMode="HighQuality"/>
                                 <TextBlock Foreground="{StaticResource FontColor}" Text="Preview: "/>
@@ -383,7 +383,7 @@
                     <Label Width="Auto">
                         <Label.Content>
                             <WrapPanel Orientation="Horizontal">
-                                <TextBlock Margin="0, 1, 5, 0" Text="&#xe8ff;" 
+                                <TextBlock Margin="0, 1, 5, 0" Text="&#xE7B3;" 
                                        FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="14"
                                        RenderOptions.BitmapScalingMode="HighQuality"/>
                                 <TextBlock Foreground="{StaticResource FontColor}" Text="Preview: "/>
@@ -610,7 +610,7 @@
                     <Label Width="Auto">
                         <Label.Content>
                             <WrapPanel Orientation="Horizontal">
-                                <TextBlock Margin="0, 1, 5, 0" Text="&#xe8ff;" 
+                                <TextBlock Margin="0, 1, 5, 0" Text="&#xE7B3;" 
                                        FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="14"
                                        RenderOptions.BitmapScalingMode="HighQuality"/>
                                 <TextBlock Foreground="{StaticResource FontColor}" Text="Preview: "/>
